@@ -413,7 +413,7 @@ section { background: transparent !important; }
   justify-content: center;
   height: 40px;
 }
-.advantage-card h4 {
+.advantage-card h3 {
   font-size: 0.95rem;
   font-weight: 600;
   margin-bottom: 4px;
