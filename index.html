@@ -7,8 +7,8 @@
   <title>Rasastra — Software Solutions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -17,7 +17,7 @@
   <nav class="navbar" id="navbar" role="navigation">
     <div class="container nav-container">
       <a href="#home" class="logo">
-        <img src="assets/images/logo.png" alt="Rasastra" class="logo-img" fetchpriority="high" />
+        <img src="assets/images/logo.png" alt="Rasastra" class="logo-img" width="139" height="38" fetchpriority="high" />
       </a>
       <div class="nav-menu" id="navMenu">
         <a class="nav-link active" href="#home">Home</a>
@@ -531,12 +531,12 @@
       <div class="terms-grid">
         <div class="term-item reveal stagger-1">
           <div class="num">01</div>
-          <h4>Payment</h4>
+          <h3>Payment</h3>
           <p>20% DP upfront, remaining after project completion.</p>
         </div>
         <div class="term-item reveal stagger-2">
           <div class="num">02</div>
-          <h4>Process</h4>
+          <h3>Process</h3>
           <p>Work starts after DP received. Timeline depends on complexity.</p>
         </div>
         <div class="term-item reveal stagger-3">
@@ -546,7 +546,7 @@
         </div>
         <div class="term-item reveal stagger-4">
           <div class="num">04</div>
-          <h4>Cancellation</h4>
+          <h3>Cancellation</h3>
           <p>DP non-refundable. Payment adjusted to progress.</p>
         </div>
         <div class="term-item reveal stagger-5">
@@ -683,7 +683,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="flogo">
-            <img src="assets/images/logo.png" alt="Rasastra" class="mark" />
+            <img src="assets/images/logo.png" alt="Rasastra" class="mark" width="124" height="34" />
           </div>
           <p>From Malang, Indonesia. We help bring ideas to life through design, websites, and games.</p>
         </div>

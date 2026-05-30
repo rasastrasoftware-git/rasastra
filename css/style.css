@@ -1,7 +1,7 @@
 /* ========== VARIABLES ========== */
 :root {
   --vp-deep: #6D28D9;
-  --vp-soft: #8B5CF6;
+  --vp-soft: #7C4EE4;
   --vp-pink: #D946EF;
   --vp-bright: #FF6BAE;
   --vp-light: #FFB3D1;
@@ -13,7 +13,7 @@
   --border-light: rgba(109, 40, 217, 0.1);
   --text-dark: #1A1025;
   --text-muted: #6B5E7A;
-  --text-light: #9B8EB0;
+  --text-light: #867A9E;
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
@@ -881,7 +881,7 @@ section { background: transparent !important; }
   color: var(--vp-soft);
   margin-bottom: 6px;
 }
-.term-item h4 {
+.term-item h3 {
   font-size: 0.95rem;
   font-weight: 600;
   margin-bottom: 4px;
