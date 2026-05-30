@@ -26,7 +26,7 @@
 
 /* ========== RESET ========== */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
 body {
   font-family: var(--font);
   background: var(--bg);
@@ -1054,6 +1054,7 @@ a.contact-row:hover .contact-arrow { opacity: 1; }
     top: 0; right: -100%;
     width: 260px;
     height: 100vh;
+    height: 100dvh;
     background: #fff;
     flex-direction: column;
     padding: 80px 24px 24px;
