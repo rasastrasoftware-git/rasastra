@@ -108,6 +108,10 @@ function openModal(data) {
   mTechs.innerHTML = data.techs.map(t => `<span>${t}</span>`).join('');
   overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
+  const iframe = document.querySelector('.video-wrapper iframe');
+  if (iframe && iframe.dataset.src && !iframe.src) {
+    iframe.src = iframe.dataset.src;
+  }
 }
 
 function closeModal(e) {

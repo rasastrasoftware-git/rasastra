@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rasastra — Software Solutions from Malang, Indonesia. Figma design, custom websites, and game development." />
   <title>Rasastra — Software Solutions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,20 +14,20 @@
 <body>
 
   <!-- ============ NAVBAR ============ -->
-  <nav class="navbar" id="navbar">
+  <nav class="navbar" id="navbar" role="navigation">
     <div class="container nav-container">
-      <a href="#home" class="logo" onclick="scrollToSection('home')">
-        <img src="assets/images/logo.png" alt="Rasastra" class="logo-img" />
+      <a href="#home" class="logo">
+        <img src="assets/images/logo.png" alt="Rasastra" class="logo-img" fetchpriority="high" />
       </a>
       <div class="nav-menu" id="navMenu">
-        <a class="nav-link active" onclick="scrollToSection('home')">Home</a>
-        <a class="nav-link" onclick="scrollToSection('about')">About</a>
-        <a class="nav-link" onclick="scrollToSection('services')">Services</a>
-        <a class="nav-link" onclick="scrollToSection('portfolio')">Portfolio</a>
-        <a class="nav-link" onclick="scrollToSection('terms')">Terms</a>
+        <a class="nav-link active" href="#home">Home</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#services">Services</a>
+        <a class="nav-link" href="#portfolio">Portfolio</a>
+        <a class="nav-link" href="#terms">Terms</a>
       </div>
       <div class="nav-actions">
-        <a class="btn btn-primary nav-cta" onclick="scrollToSection('contact')">Contact Us</a>
+        <a class="btn btn-primary nav-cta" href="#contact">Contact Us</a>
         <button class="hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleMobileMenu()">
           <span></span><span></span><span></span>
         </button>
@@ -34,6 +35,7 @@
     </div>
   </nav>
 
+  <main role="main">
   <!-- ============ HERO ============ -->
   <section class="section hero" id="home">
     <div class="section-blobs">
@@ -57,7 +59,7 @@
           <span style="display:flex;align-items:center;gap:6px;font-size:0.82rem;color:var(--text-muted);"><span style="width:8px;height:8px;border-radius:50%;background:#FF6BAE;display:inline-block;animation:pulseGlow 2s ease-in-out infinite;animation-delay:1s;"></span>Game</span>
         </div>
           <div class="hero-actions">
-            <a class="btn btn-primary btn-lg" onclick="scrollToSection('services')">Explore Services</a>
+            <a class="btn btn-primary btn-lg" href="#services">Explore Services</a>
           </div>
       </div>
       <div class="hero-visual">
@@ -503,7 +505,7 @@
       <p class="modal-cat" id="modalCat"></p>
       <p class="modal-desc" id="modalDesc"></p>
       <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Demo video" allowfullscreen></iframe>
+        <iframe data-src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Demo video" allowfullscreen></iframe>
       </div>
       <div class="techs" id="modalTechs"></div>
       <div class="modal-actions">
@@ -673,6 +675,7 @@
       </div>
     </div>
   </section>
+  </main>
 
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
@@ -686,10 +689,10 @@
         </div>
         <div class="footer-col">
           <h5>Quick Links</h5>
-          <a onclick="scrollToSection('home')">Home</a>
-          <a onclick="scrollToSection('services')">Services</a>
-          <a onclick="scrollToSection('portfolio')">Portfolio</a>
-          <a onclick="scrollToSection('contact')">Contact</a>
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contact">Contact</a>
         </div>
         <div class="footer-col">
           <h5>Social Media</h5>
@@ -700,9 +703,9 @@
         </div>
         <div class="footer-col">
           <h5>Services</h5>
-          <a onclick="scrollToSection('services')">Design Figma</a>
-          <a onclick="scrollToSection('services')">Web Development</a>
-          <a onclick="scrollToSection('services')">Game Development</a>
+          <a href="#services">Design Figma</a>
+          <a href="#services">Web Development</a>
+          <a href="#services">Game Development</a>
         </div>
       </div>
       <div class="footer-bottom">
