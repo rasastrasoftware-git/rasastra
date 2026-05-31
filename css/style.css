@@ -730,4 +730,9 @@ a.contact-row:hover .contact-arrow { opacity: 1; }
   .footer-grid { grid-template-columns: 1fr; text-align: center; }
   .footer-brand p { max-width: 100%; }
   .modal { padding: 20px; }
+  .contact-row { gap: 10px; padding: 14px 16px; }
+  .contact-label { min-width: 60px; font-size: 0.75rem; }
+  .contact-value { font-size: 0.82rem; word-break: break-all; }
+  .contact-icon { width: 36px; height: 36px; font-size: 0.95rem; flex-shrink: 0; }
+  .contact-arrow { display: none; }
 }
