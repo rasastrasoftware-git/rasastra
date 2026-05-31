@@ -289,7 +289,6 @@
   background: var(--gradient-accent);
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 2px 8px rgba(109, 40, 217, 0.2);
 }
 
 .portfolio-grid {
