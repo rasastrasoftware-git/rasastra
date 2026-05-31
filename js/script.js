@@ -6,10 +6,12 @@ const menuOverlay = document.getElementById('menuOverlay');
 let lastScroll = 0;
 
 function toggleMobileMenu() {
+  if (!navMenu || !menuOverlay) return;
   hamburger.classList.toggle('active');
-  navMenu.classList.toggle('open');
+  const isOpen = navMenu.classList.toggle('open');
+  navMenu.style.display = isOpen ? 'flex' : 'none';
   menuOverlay.classList.toggle('menu-open');
-  document.body.style.overflow = navMenu.classList.contains('open') ? 'hidden' : '';
+  document.body.style.overflow = isOpen ? 'hidden' : '';
 }
 
 document.querySelectorAll('.nav-link').forEach(link => {
