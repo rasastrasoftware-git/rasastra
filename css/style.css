@@ -181,31 +181,33 @@
   box-shadow: var(--card-shadow-hover);
 }
 .team-card .avatar {
-  width: 72px;
-  height: 72px;
-  margin: 0 auto 16px;
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 18px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.8rem;
+  position: relative;
+  overflow: hidden;
 }
 .team-card .avatar.a1 {
-  background: linear-gradient(135deg, rgba(139,92,246,0.12), rgba(109,40,217,0.12));
+  box-shadow: 0 0 0 4px rgba(139,92,246,0.25), 0 8px 24px rgba(109,40,217,0.12);
 }
 .team-card .avatar.a2 {
-  background: linear-gradient(135deg, rgba(255,107,174,0.12), rgba(217,70,239,0.12));
+  box-shadow: 0 0 0 4px rgba(255,107,174,0.25), 0 8px 24px rgba(217,70,239,0.12);
 }
 .team-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 25%;
   border-radius: 50%;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition: transform 0.4s ease;
+  background: var(--bg);
 }
 .team-card:hover .team-photo {
-  transform: scale(1.08);
-  box-shadow: 0 0 0 3px #fff, 0 0 20px rgba(139,92,246,0.25);
+  transform: scale(1.06);
 }
 .team-card h3 {
   font-size: 1.15rem;
