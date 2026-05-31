@@ -287,8 +287,9 @@
 }
 .filter-btn.active {
   background: var(--gradient-accent);
-  border-color: transparent;
+  border: none;
   color: #fff;
+  padding: 11.5px 24px;
 }
 
 .portfolio-grid {
