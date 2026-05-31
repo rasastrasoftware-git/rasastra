@@ -718,7 +718,7 @@ a.contact-row:hover .contact-arrow { opacity: 1; }
     display: none;
     position: fixed;
     top: 0; right: 0;
-    width: 280px;
+    width: 264px;
     min-height: 100dvh;
     background: #fff;
     flex-direction: column;
@@ -779,10 +779,7 @@ a.contact-row:hover .contact-arrow { opacity: 1; }
   }
   .nav-menu-mobile .nav-link:last-of-type { border-bottom: none; }
 
-  @media (max-width: 400px) {
-    .nav-menu-mobile { width: 100%; }
-    .nav-menu-mobile .nav-link { padding: 14px 20px; }
-  }
+
   .nav-link { width: 100%; padding: 12px 18px; }
   .hamburger { display: flex; flex-shrink: 0; }
   .nav-cta { display: none; }
