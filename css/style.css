@@ -277,6 +277,9 @@
   color: var(--text-muted);
   cursor: pointer;
   transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  appearance: none;
 }
 .filter-btn:hover {
   border-color: var(--vp-soft);
