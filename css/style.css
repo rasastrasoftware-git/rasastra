@@ -286,10 +286,9 @@
   color: var(--vp-deep);
 }
 .filter-btn.active {
-  background: var(--gradient-accent);
+  background: var(--vp-deep);
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 4px 20px rgba(255, 107, 174, 0.25);
 }
 
 .portfolio-grid {
