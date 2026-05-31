@@ -31,8 +31,8 @@ ul{list-style:none}
 .btn-outline:hover{background:var(--vp-deep);color:#fff;transform:translateY(-2px)}
 .btn-sm{padding:8px 20px;font-size:.82rem}
 .btn-lg{padding:14px 32px;font-size:.95rem}
-@keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fadeInScale{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+@keyframes fadeInUp{from{transform:translateY(40px)}to{transform:translateY(0)}}
+@keyframes fadeInScale{from{transform:scale(.9)}to{transform:scale(1)}}
 @keyframes floatBlob{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.05)}66%{transform:translate(-20px,30px) scale(.95)}}
 .section-blobs .blob,.hero-float-icon,.svg-browser{will-change:transform}
 @keyframes f1{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-18px) rotate(-6deg)}}
@@ -82,12 +82,12 @@ body{background:repeating-linear-gradient(180deg,#fff 0px,#F8F7FF 300px,#fff 600
 section{background:transparent!important}
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:120px 0 60px}
 .hero-content{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.hero-text{opacity:0;animation:fadeInUp .5s ease .1s forwards}
+.hero-text{animation:fadeInUp .5s ease}
 .hero-badge{display:inline-block;padding:6px 16px;background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.15);border-radius:var(--radius-full);font-size:.8rem;font-weight:500;color:var(--vp-soft);margin-bottom:20px;letter-spacing:.5px}
 .hero-title{font-size:3.4rem;font-weight:800;line-height:1.1;margin-bottom:18px;color:var(--text-dark)}
 .hero-subtitle{font-size:1.05rem;color:var(--text-muted);max-width:480px;line-height:1.8;margin-bottom:32px}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-.hero-visual{position:relative;width:100%;max-width:400px;margin:0 auto;opacity:0;animation:fadeInScale .5s ease .3s forwards}
+.hero-visual{position:relative;width:100%;max-width:400px;margin:0 auto;animation:fadeInScale .5s ease .2s}
 .hero-svg{width:100%;height:auto;display:block;filter:drop-shadow(0 20px 60px rgba(109,40,217,.1))}
 .icon-box{display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0}
 .icon-box.purple{background:linear-gradient(135deg,#A78BFA,#6D28D9);box-shadow:0 4px 14px rgba(109,40,217,.18)}
