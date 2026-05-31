@@ -134,11 +134,18 @@ i[class*=" fa-"]{display:inline-block;min-width:1em;text-align:center}
   </nav>
   <div id="menuOverlay" class="menu-overlay" onclick="toggleMobileMenu()"></div>
   <div class="nav-menu-mobile" id="navMenu" onclick="closeMobileMenu(event)">
+    <div class="nav-mobile-header">
+      <img src="assets/images/logo.png" alt="Rasastra" class="logo-img" width="100" height="27" />
+      <button class="nav-close" onclick="toggleMobileMenu()" aria-label="Close menu">&times;</button>
+    </div>
     <a class="nav-link active" href="#home">Home</a>
     <a class="nav-link" href="#about">About</a>
     <a class="nav-link" href="#services">Services</a>
     <a class="nav-link" href="#portfolio">Portfolio</a>
     <a class="nav-link" href="#terms">Terms</a>
+    <div class="nav-mobile-footer">
+      <a class="btn btn-primary nav-cta-mobile" href="#contact">Contact Us</a>
+    </div>
   </div>
 
   <main role="main">
