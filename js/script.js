@@ -7,12 +7,20 @@ let lastScroll = 0;
 function toggleMobileMenu() {
   hamburger.classList.toggle('active');
   navMenu.classList.toggle('open');
+  overlay.classList.toggle('menu-open');
+  if (navMenu.classList.contains('open')) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
 }
 
 document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', () => {
     hamburger.classList.remove('active');
     navMenu.classList.remove('open');
+    overlay.classList.remove('menu-open');
+    document.body.style.overflow = '';
   });
 });
 
