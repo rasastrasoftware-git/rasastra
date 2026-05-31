@@ -718,7 +718,8 @@ a.contact-row:hover .contact-arrow { opacity: 1; }
     display: none;
     position: fixed;
     top: 0; right: 0;
-    width: 264px;
+    width: 72vw;
+    max-width: 280px;
     min-height: 100dvh;
     background: #fff;
     flex-direction: column;
