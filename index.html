@@ -73,6 +73,7 @@ ul{list-style:none}
 .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
 .hamburger.active span:nth-child(2){opacity:0}
 .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+@media(max-width:868px){.hero-content{grid-template-columns:1fr;text-align:center;gap:40px}.hero-subtitle{margin:0 auto 32px}.hero-actions{justify-content:center}.hero-title{font-size:2.4rem}}
 .section-blobs{position:absolute;inset:0;z-index:0;pointer-events:none}
 .section-blobs .blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.13;animation:floatBlob 12s ease-in-out infinite}
 .section-blobs .b1{width:500px;height:500px;background:#8B5CF6;top:-15%;right:-10%}
@@ -105,8 +106,7 @@ i[class*=" fa-"]{display:inline-block;min-width:1em;text-align:center}
 </style>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=optional" onload="this.onload=null;this.rel='stylesheet'" />
   <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'" />
-  <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="css/style.css" /></noscript>
+  <link rel="stylesheet" href="css/style.css" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=optional" /></noscript>
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
 </head>
