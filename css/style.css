@@ -196,6 +196,17 @@
 .team-card .avatar.a2 {
   background: linear-gradient(135deg, rgba(255,107,174,0.12), rgba(217,70,239,0.12));
 }
+.team-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.team-card:hover .team-photo {
+  transform: scale(1.08);
+  box-shadow: 0 0 0 3px #fff, 0 0 20px rgba(139,92,246,0.25);
+}
 .team-card h3 {
   font-size: 1.15rem;
   font-weight: 700;
