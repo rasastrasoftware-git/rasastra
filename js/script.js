@@ -2,24 +2,21 @@
 const navbar = document.getElementById('navbar');
 const navMenu = document.getElementById('navMenu');
 const hamburger = document.getElementById('hamburger');
+const menuOverlay = document.getElementById('menuOverlay');
 let lastScroll = 0;
 
 function toggleMobileMenu() {
   hamburger.classList.toggle('active');
   navMenu.classList.toggle('open');
-  overlay.classList.toggle('menu-open');
-  if (navMenu.classList.contains('open')) {
-    document.body.style.overflow = 'hidden';
-  } else {
-    document.body.style.overflow = '';
-  }
+  menuOverlay.classList.toggle('menu-open');
+  document.body.style.overflow = navMenu.classList.contains('open') ? 'hidden' : '';
 }
 
 document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', () => {
     hamburger.classList.remove('active');
     navMenu.classList.remove('open');
-    overlay.classList.remove('menu-open');
+    menuOverlay.classList.remove('menu-open');
     document.body.style.overflow = '';
   });
 });
@@ -33,6 +30,12 @@ function scrollToSection(id) {
 window.addEventListener('scroll', () => {
   const y = window.scrollY;
   navbar.classList.toggle('scrolled', y > 40);
+  if (navMenu.classList.contains('open') && y > 80) {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('open');
+    menuOverlay.classList.remove('menu-open');
+    document.body.style.overflow = '';
+  }
 
   // Active nav link
   const sections = document.querySelectorAll('section[id]');
