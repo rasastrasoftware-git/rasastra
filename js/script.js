@@ -18,6 +18,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', () => {
     hamburger.classList.remove('active');
     navMenu.classList.remove('open');
+    navMenu.style.display = '';
     menuOverlay.classList.remove('menu-open');
     document.body.style.overflow = '';
   });
@@ -35,6 +36,7 @@ window.addEventListener('scroll', () => {
   if (navMenu.classList.contains('open') && y > 80) {
     hamburger.classList.remove('active');
     navMenu.classList.remove('open');
+    navMenu.style.display = '';
     menuOverlay.classList.remove('menu-open');
     document.body.style.overflow = '';
   }

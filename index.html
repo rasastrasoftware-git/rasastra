@@ -60,7 +60,8 @@ ul{list-style:none}
 .nav-container{display:flex;align-items:center;justify-content:space-between}
 .logo{display:flex;align-items:center;gap:10px;font-size:1.2rem;font-weight:700}
 .logo-img{height:38px;width:auto;object-fit:contain}
-.nav-menu{display:flex;align-items:center;gap:4px}
+#navMenuDesktop{display:flex;align-items:center;gap:4px}
+.nav-menu-mobile{display:none}
 .nav-link{padding:8px 16px;color:var(--text-muted);font-size:.88rem;font-weight:500;border-radius:var(--radius-full);transition:all .3s ease;cursor:pointer}
 .nav-link:hover{color:var(--vp-deep);background:rgba(109,40,217,.06)}
 .nav-link.active{color:var(--vp-deep);font-weight:600}
@@ -115,7 +116,7 @@ i[class*=" fa-"]{display:inline-block;min-width:1em;text-align:center}
       <a href="#home" class="logo">
         <img src="assets/images/logo.png" alt="Rasastra" class="logo-img" width="139" height="38" fetchpriority="high" />
       </a>
-      <div class="nav-menu" id="navMenu">
+      <div class="nav-menu" id="navMenuDesktop">
         <a class="nav-link active" href="#home">Home</a>
         <a class="nav-link" href="#about">About</a>
         <a class="nav-link" href="#services">Services</a>
@@ -131,6 +132,13 @@ i[class*=" fa-"]{display:inline-block;min-width:1em;text-align:center}
     </div>
   </nav>
   <div id="menuOverlay" class="menu-overlay" onclick="toggleMobileMenu()"></div>
+  <div class="nav-menu-mobile" id="navMenu">
+    <a class="nav-link active" href="#home">Home</a>
+    <a class="nav-link" href="#about">About</a>
+    <a class="nav-link" href="#services">Services</a>
+    <a class="nav-link" href="#portfolio">Portfolio</a>
+    <a class="nav-link" href="#terms">Terms</a>
+  </div>
 
   <main role="main">
   <!-- ============ HERO ============ -->

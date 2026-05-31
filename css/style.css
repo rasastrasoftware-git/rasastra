@@ -715,7 +715,8 @@ a.contact-row:hover .contact-arrow { opacity: 1; }
   .menu-overlay.menu-open {
     opacity: 1; pointer-events: all;
   }
-  .nav-menu {
+  #navMenuDesktop { display: none; }
+  .nav-menu-mobile {
     display: none;
     position: fixed;
     top: 0; right: 0;
@@ -729,7 +730,7 @@ a.contact-row:hover .contact-arrow { opacity: 1; }
     overflow-y: auto;
     z-index: 1001;
   }
-  .nav-menu.open { display: flex; }
+  .nav-menu-mobile.open { display: flex; }
   .nav-link { width: 100%; padding: 12px 18px; }
   .hamburger { display: flex; flex-shrink: 0; }
   .nav-cta { display: none; }
