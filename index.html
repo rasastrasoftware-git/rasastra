@@ -34,6 +34,7 @@ ul{list-style:none}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeInScale{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
 @keyframes floatBlob{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.05)}66%{transform:translate(-20px,30px) scale(.95)}}
+.section-blobs .blob,.hero-float-icon,.svg-browser{will-change:transform}
 @keyframes f1{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-18px) rotate(-6deg)}}
 @keyframes f2{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-14px) rotate(5deg)}}
 @keyframes f3{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-12px) rotate(-4deg)}}
@@ -102,11 +103,11 @@ section{background:transparent!important}
 i[class*=" fa-"]{display:inline-block;min-width:1em;text-align:center}
 .nav-link i,.footer-col a i,.btn i{min-width:auto}
 </style>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=optional" onload="this.onload=null;this.rel='stylesheet'" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
   <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'" />
   <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="css/style.css" /></noscript>
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=optional" /></noscript>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" /></noscript>
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
 </head>
 <body>
@@ -135,7 +136,7 @@ i[class*=" fa-"]{display:inline-block;min-width:1em;text-align:center}
   <div id="menuOverlay" class="menu-overlay" onclick="toggleMobileMenu()"></div>
   <div class="nav-menu-mobile" id="navMenu" onclick="closeMobileMenu(event)">
     <div class="nav-mobile-header">
-      <img src="assets/images/logo.png" alt="Rasastra" class="logo-img" width="100" height="27" />
+      <img src="assets/images/logo.png" alt="Rasastra" class="logo-img" width="100" height="27" loading="lazy" />
       <button class="nav-close" onclick="toggleMobileMenu()" aria-label="Close menu">&times;</button>
     </div>
     <a class="nav-link active" href="#home">Home</a>
@@ -435,7 +436,7 @@ i[class*=" fa-"]{display:inline-block;min-width:1em;text-align:center}
         <!-- Anzami -->
         <div class="team-card reveal stagger-1">
           <div class="avatar a1">
-            <img src="assets/images/anzami.jpeg" alt="Anzami" class="team-photo" />
+            <picture><source srcset="assets/images/anzami.webp" type="image/webp" /><img src="assets/images/anzami.jpeg" alt="Anzami" class="team-photo" loading="lazy" width="110" height="110" /></picture>
           </div>
           <h3>Anzami</h3>
           <p class="role">UI/UX Designer & Web Developer</p>
@@ -449,7 +450,7 @@ i[class*=" fa-"]{display:inline-block;min-width:1em;text-align:center}
         <!-- Christie -->
         <div class="team-card reveal stagger-2">
           <div class="avatar a2">
-            <img src="assets/images/Christie.jpeg" alt="Christie" class="team-photo" />
+            <picture><source srcset="assets/images/Christie.webp" type="image/webp" /><img src="assets/images/Christie.jpeg" alt="Christie" class="team-photo" loading="lazy" width="110" height="110" /></picture>
           </div>
           <h3>Christie</h3>
           <p class="role">Game Designer & Unity Developer</p>
