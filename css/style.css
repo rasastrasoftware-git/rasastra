@@ -159,7 +159,6 @@
 .service-card .btn { align-self: flex-start; }
 
 /* ========== TEAM ========== */
-.team { }
 .team-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -329,9 +328,6 @@
   position: relative;
   overflow: hidden;
 }
-.portfolio-item .thumb svg {
-  z-index: 1;
-}
 .portfolio-item .thumb .cat-badge {
   position: absolute;
   top: 12px; left: 12px;
@@ -457,7 +453,6 @@
 }
 
 /* ========== TESTIMONIALS ========== */
-.testimonials { }
 .testi-track {
   display: flex;
   overflow: hidden;

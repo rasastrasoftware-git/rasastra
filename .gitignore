@@ -2,4 +2,3 @@ node_modules
 .vite
 *.local
 .vercel
-node_modules
