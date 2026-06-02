@@ -616,6 +616,43 @@ a.contact-row:hover .contact-arrow { opacity: 1; }
   font-style: italic;
 }
 
+/* ========== LANGUAGE TOGGLE ========== */
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: rgba(109,40,217,0.08);
+  border: 1px solid rgba(109,40,217,0.15);
+  border-radius: var(--radius-full);
+  padding: 3px;
+  cursor: pointer;
+  font-family: var(--font);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  line-height: 1;
+  -webkit-tap-highlight-color: transparent;
+}
+.lang-toggle:hover {
+  background: rgba(109,40,217,0.12);
+}
+.lang-toggle span {
+  padding: 4px 8px;
+  border-radius: var(--radius-full);
+  transition: all 0.25s ease;
+  color: var(--text-muted);
+}
+.lang-toggle span.active {
+  background: var(--gradient-accent);
+  color: #fff;
+}
+@media(max-width:868px){
+  .lang-toggle { font-size: 0.65rem; }
+  .lang-toggle span { padding: 3px 6px; }
+}
+
 /* ========== FLOATING WHATSAPP ========== */
 .whatsapp-float {
   position: fixed;
