@@ -1,7 +1,6 @@
 (function() {
 'use strict';
 
-// ---------- NAVBAR ----------
 const navbar = document.getElementById('navbar');
 const navMenu = document.getElementById('navMenu');
 const hamburger = document.getElementById('hamburger');
@@ -36,7 +35,6 @@ window.closeMobileMenu = function(e) {
   document.body.style.overflow = '';
 };
 
-// ---------- SCROLL HANDLER ----------
 let ticking = false;
 window.addEventListener('scroll', () => {
   if (ticking) return;
@@ -52,11 +50,10 @@ window.addEventListener('scroll', () => {
       document.body.style.overflow = '';
     }
 
-    // Active nav link
     const sections = document.querySelectorAll('section[id]');
     let current = '';
     sections.forEach(s => {
-      if (y + 120 >= s.offsetTop) current = s.id;
+      if (y + 140 >= s.offsetTop) current = s.id;
     });
     document.querySelectorAll('.nav-link').forEach(link => {
       link.classList.toggle('active', link.textContent.toLowerCase().trim() === current);
@@ -66,7 +63,6 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// ---------- SCROLL REVEAL ----------
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach(entry => {
@@ -80,7 +76,6 @@ const observer = new IntersectionObserver(
 
 document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
 
-// ---------- PORTFOLIO FILTER ----------
 const filterBtns = document.querySelectorAll('.filter-btn');
 const portfolioItems = document.querySelectorAll('.portfolio-item');
 
@@ -123,7 +118,6 @@ function applyFilter() {
   }, 270);
 }
 
-// ---------- MODAL ----------
 const overlay = document.getElementById('modalOverlay');
 const mTitle = document.getElementById('modalTitle');
 const mCat = document.getElementById('modalCat');
