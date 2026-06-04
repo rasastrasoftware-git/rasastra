@@ -5,7 +5,33 @@ const navbar = document.getElementById('navbar');
 const navMenu = document.getElementById('navMenu');
 const hamburger = document.getElementById('hamburger');
 const menuOverlay = document.getElementById('menuOverlay');
+const themeToggle = document.getElementById('themeToggle');
+const themeToggleMobile = document.getElementById('themeToggleMobile');
+const html = document.documentElement;
 
+// ============ THEME TOGGLE ============
+function setTheme(theme) {
+  html.setAttribute('data-theme', theme);
+  localStorage.setItem('rasastra-theme', theme);
+}
+
+function toggleTheme() {
+  const current = html.getAttribute('data-theme');
+  setTheme(current === 'light' ? 'dark' : 'light');
+}
+
+if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+if (themeToggleMobile) themeToggleMobile.addEventListener('click', toggleTheme);
+
+const savedTheme = localStorage.getItem('rasastra-theme');
+if (savedTheme) {
+  html.setAttribute('data-theme', savedTheme);
+} else {
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  html.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+}
+
+// ============ MOBILE MENU ============
 window.toggleMobileMenu = function() {
   if (!navMenu || !menuOverlay) return;
   hamburger.classList.toggle('active');
@@ -16,8 +42,7 @@ window.toggleMobileMenu = function() {
 };
 
 document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.stopPropagation();
+  link.addEventListener('click', () => {
     hamburger.classList.remove('active');
     navMenu.classList.remove('open');
     navMenu.style.display = '';
@@ -35,13 +60,17 @@ window.closeMobileMenu = function(e) {
   document.body.style.overflow = '';
 };
 
+// ============ SCROLL BEHAVIOR ============
 let ticking = false;
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+
 window.addEventListener('scroll', () => {
   if (ticking) return;
   ticking = true;
   requestAnimationFrame(() => {
     const y = window.scrollY;
-    navbar.classList.toggle('scrolled', y > 40);
+
     if (navMenu.classList.contains('open') && y > 80) {
       hamburger.classList.remove('active');
       navMenu.classList.remove('open');
@@ -50,12 +79,11 @@ window.addEventListener('scroll', () => {
       document.body.style.overflow = '';
     }
 
-    const sections = document.querySelectorAll('section[id]');
     let current = '';
     sections.forEach(s => {
-      if (y + 140 >= s.offsetTop) current = s.id;
+      if (y + 160 >= s.offsetTop) current = s.id;
     });
-    document.querySelectorAll('.nav-link').forEach(link => {
+    navLinks.forEach(link => {
       link.classList.toggle('active', link.textContent.toLowerCase().trim() === current);
     });
 
@@ -63,7 +91,8 @@ window.addEventListener('scroll', () => {
   });
 });
 
-const observer = new IntersectionObserver(
+// ============ SCROLL REVEAL ============
+const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -71,11 +100,49 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
+  { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
 );
 
-document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => revealObserver.observe(el));
 
+// ============ ANIMATED COUNTERS ============
+const counterObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.target, 10);
+        if (isNaN(target)) return;
+
+        let current = 0;
+        const duration = 1500;
+        const startTime = performance.now();
+
+        function updateCounter(now) {
+          const elapsed = now - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          current = Math.floor(eased * target);
+          el.textContent = current;
+
+          if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+          } else {
+            el.textContent = target;
+          }
+        }
+
+        requestAnimationFrame(updateCounter);
+        counterObserver.unobserve(el);
+      }
+    });
+  },
+  { threshold: 0.5 }
+);
+
+document.querySelectorAll('.stat-number[data-target]').forEach(el => counterObserver.observe(el));
+
+// ============ PORTFOLIO FILTER ============
 const filterBtns = document.querySelectorAll('.filter-btn');
 const portfolioItems = document.querySelectorAll('.portfolio-item');
 
@@ -118,12 +185,12 @@ function applyFilter() {
   }, 270);
 }
 
+// ============ MODAL ============
 const overlay = document.getElementById('modalOverlay');
 const mTitle = document.getElementById('modalTitle');
 const mCat = document.getElementById('modalCat');
 const mDesc = document.getElementById('modalDesc');
 const mTechs = document.getElementById('modalTechs');
-const mIframe = document.querySelector('.video-wrapper iframe');
 
 window.openModal = function(data) {
   if (!data) return;
@@ -133,9 +200,6 @@ window.openModal = function(data) {
   mTechs.innerHTML = (data.techs || []).map(t => `<span>${t}</span>`).join('');
   overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
-  if (mIframe && mIframe.dataset.src && !mIframe.src) {
-    mIframe.src = mIframe.dataset.src;
-  }
 };
 
 window.closeModal = function(e) {
@@ -147,5 +211,18 @@ window.closeModal = function(e) {
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeModal();
 });
+
+// ============ TESTIMONIAL CAROUSEL ============
+const testiTrack = document.querySelector('.testi-track');
+const testiGrid = document.querySelector('.testi-grid');
+
+if (testiTrack && testiGrid) {
+  const cards = testiGrid.querySelectorAll('.testi-card');
+  if (cards.length > 0) {
+    const clone = testiGrid.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    testiTrack.appendChild(clone);
+  }
+}
 
 })();
