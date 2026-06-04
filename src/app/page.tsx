@@ -18,6 +18,12 @@ export default function Home() {
 
   return (
     <>
+      <div className="aurora-bg">
+        <span className="aurora-blob a1" />
+        <span className="aurora-blob a2" />
+        <span className="aurora-blob a3" />
+      </div>
+
       <Navbar theme={theme} onToggleTheme={toggleTheme} />
       <main>
         <Hero />
