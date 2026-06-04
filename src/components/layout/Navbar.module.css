@@ -1,0 +1,124 @@
+.navbar {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 32px);
+  max-width: calc(1248px);
+  z-index: 1000;
+  background: var(--navbar-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--navbar-border);
+  border-radius: var(--radius-xl, 24px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  padding: 0 20px;
+  transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  height: 64px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.logoImg {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
+
+.desktopMenu {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.link {
+  padding: 8px 18px;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--text-primary);
+  background: rgba(139, 92, 246, 0.08);
+}
+
+.link.active {
+  color: var(--vp-soft);
+  font-weight: 600;
+  background: rgba(139, 92, 246, 0.1);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.cta {
+  padding: 8px 22px;
+  font-size: 0.82rem;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburgerActive span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburgerActive span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburgerActive span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+  .desktopMenu {
+    display: none;
+  }
+  .cta {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+}

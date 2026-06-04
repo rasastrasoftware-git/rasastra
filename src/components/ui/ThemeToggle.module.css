@@ -1,0 +1,48 @@
+.base {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.base:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+  color: var(--text-primary);
+}
+
+.base svg {
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+.desktop {
+  composes: base;
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+}
+
+.mobile {
+  composes: base;
+  width: 36px;
+  height: 36px;
+  font-size: 0.9rem;
+}
+
+.visible {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+.hidden {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.5);
+}

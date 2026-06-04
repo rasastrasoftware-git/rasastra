@@ -1,0 +1,41 @@
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  color: var(--vp-soft);
+}
+
+.gradient {
+  background: var(--gradient-accent);
+  box-shadow: 0 4px 20px rgba(109, 40, 217, 0.25);
+}
+
+.sm {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.md {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  font-size: 20px;
+}
+
+.lg {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  font-size: 26px;
+}

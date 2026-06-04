@@ -1,0 +1,108 @@
+.section {
+  padding: 120px 0;
+  position: relative;
+}
+
+.container {
+  max-width: 1248px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
+.track {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 48px, black calc(100% - 48px), transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 48px, black calc(100% - 48px), transparent);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: flex;
+  gap: 20px;
+  animation: scroll 60s linear infinite;
+  width: max-content;
+}
+
+.track:hover .grid {
+  animation-play-state: paused;
+}
+
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 28px 30px;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  transition: all 0.3s ease;
+  width: 360px;
+  flex-shrink: 0;
+  box-shadow: var(--glass-shadow);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+  box-shadow: var(--glass-shadow-hover);
+}
+
+.stars {
+  color: #f59e0b;
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+  letter-spacing: 2px;
+}
+
+.card p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+
+.author {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.blobs {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.06;
+  animation: auroraFloat 20s ease-in-out infinite;
+}
+
+.b1 { width: 600px; height: 600px; background: #8b5cf6; top: -20%; right: -15%; }
+.b2 { width: 450px; height: 450px; background: #ff6bae; bottom: -25%; left: -10%; animation-delay: -7s; }
+.b3 { width: 350px; height: 350px; background: #d946ef; top: 45%; left: 45%; animation-delay: -14s; opacity: 0.04; }
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes auroraFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(50px, -30px) scale(1.05); }
+  50% { transform: translate(-20px, 40px) scale(0.95); }
+  75% { transform: translate(-40px, -20px) scale(1.02); }
+}
+
+@media (max-width: 768px) {
+  .card { width: 280px; padding: 24px; }
+  .grid { gap: 14px; }
+}
