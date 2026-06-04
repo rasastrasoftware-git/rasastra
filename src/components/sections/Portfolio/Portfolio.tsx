@@ -50,11 +50,6 @@ export function Portfolio() {
 
   return (
     <section className={styles.section} id="portfolio">
-      <div className={styles.blobs}>
-        <span className={`${styles.blob} ${styles.b1}`} />
-        <span className={`${styles.blob} ${styles.b2}`} />
-        <span className={`${styles.blob} ${styles.b3}`} />
-      </div>
       <div className={styles.container}>
         <SectionHeader
           tag="Portfolio"

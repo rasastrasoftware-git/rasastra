@@ -27,11 +27,6 @@ const STEPS = [
 export function Process() {
   return (
     <section className={styles.section} id="process">
-      <div className={styles.blobs}>
-        <span className={`${styles.blob} ${styles.b1}`} />
-        <span className={`${styles.blob} ${styles.b2}`} />
-        <span className={`${styles.blob} ${styles.b3}`} />
-      </div>
       <div className={styles.container}>
         <SectionHeader
           tag="Process"

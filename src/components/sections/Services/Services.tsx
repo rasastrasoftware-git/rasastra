@@ -16,11 +16,6 @@ const ICON_MAP: Record<string, React.ReactNode> = {
 export function Services() {
   return (
     <section className={styles.section} id="services">
-      <div className={styles.blobs}>
-        <span className={`${styles.blob} ${styles.b1}`} />
-        <span className={`${styles.blob} ${styles.b2}`} />
-        <span className={`${styles.blob} ${styles.b3}`} />
-      </div>
       <div className={styles.container}>
         <SectionHeader
           tag="Services"

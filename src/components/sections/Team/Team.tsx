@@ -12,11 +12,6 @@ const SOCIAL_ICONS: Record<string, React.ReactNode> = {
 export function Team() {
   return (
     <section className={styles.section} id="team">
-      <div className={styles.blobs}>
-        <span className={`${styles.blob} ${styles.b1}`} />
-        <span className={`${styles.blob} ${styles.b2}`} />
-        <span className={`${styles.blob} ${styles.b3}`} />
-      </div>
       <div className={styles.container}>
         <SectionHeader
           tag="Team"

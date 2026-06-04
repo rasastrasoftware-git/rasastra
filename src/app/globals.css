@@ -32,6 +32,8 @@
   --radius-full: 9999px;
   --font: 'Poppins', sans-serif;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --section-py: 120px;
+  --footer-bg: #050508;
 }
 
 [data-theme="light"] {
@@ -43,16 +45,17 @@
   --text-tertiary: rgba(24, 24, 27, 0.35);
   --glass-bg: rgba(255, 255, 255, 0.7);
   --glass-bg-hover: rgba(255, 255, 255, 0.85);
-  --glass-border: rgba(139, 92, 246, 0.12);
-  --glass-border-hover: rgba(139, 92, 246, 0.25);
-  --glass-shadow: 0 8px 32px rgba(109, 40, 217, 0.06);
-  --glass-shadow-hover: 0 16px 48px rgba(109, 40, 217, 0.1);
+  --glass-border: rgba(0, 0, 0, 0.06);
+  --glass-border-hover: rgba(139, 92, 246, 0.18);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+  --glass-shadow-hover: 0 16px 48px rgba(0, 0, 0, 0.07);
   --navbar-bg: rgba(248, 246, 255, 0.85);
-  --navbar-border: rgba(139, 92, 246, 0.1);
+  --navbar-border: rgba(0, 0, 0, 0.04);
   --card-bg: rgba(255, 255, 255, 0.8);
   --badge-bg: rgba(255, 255, 255, 0.85);
-  --badge-border: rgba(139, 92, 246, 0.12);
+  --badge-border: rgba(0, 0, 0, 0.06);
   --badge-text: rgba(24, 24, 27, 0.7);
+  --footer-bg: #ffffff;
 }
 
 *,
@@ -163,4 +166,10 @@ ul {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-py: 80px;
+  }
 }

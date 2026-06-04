@@ -19,11 +19,6 @@ function StatItemComponent({ target, suffix, label }: { target: number; suffix?:
 export function Stats() {
   return (
     <section className={styles.section} id="stats">
-      <div className={styles.blobs}>
-        <span className={`${styles.blob} ${styles.b1}`} />
-        <span className={`${styles.blob} ${styles.b2}`} />
-        <span className={`${styles.blob} ${styles.b3}`} />
-      </div>
       <div className={styles.container}>
         <div className={styles.grid}>
           {STATS.map((stat, i) => (

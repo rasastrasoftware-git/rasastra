@@ -49,11 +49,6 @@ const CONTACT_ROWS = [
 export function Contact() {
   return (
     <section className={styles.section} id="contact">
-      <div className={styles.blobs}>
-        <span className={`${styles.blob} ${styles.b1}`} />
-        <span className={`${styles.blob} ${styles.b2}`} />
-        <span className={`${styles.blob} ${styles.b3}`} />
-      </div>
       <div className={styles.container}>
         <SectionHeader
           tag="Contact"
