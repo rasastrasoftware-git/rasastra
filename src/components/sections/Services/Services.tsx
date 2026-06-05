@@ -4,6 +4,7 @@ import { SERVICES, WHATSAPP_NUMBER } from '@/constants/services';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { IconBox } from '@/components/ui/IconBox';
 import { Button } from '@/components/ui/Button';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { FaPenFancy, FaLaptopCode, FaCube, FaCheckCircle } from 'react-icons/fa';
 import styles from './Services.module.css';
 
@@ -14,8 +15,10 @@ const ICON_MAP: Record<string, React.ReactNode> = {
 };
 
 export function Services() {
+  const ref = useScrollReveal<HTMLElement>();
+
   return (
-    <section className={styles.section} id="services">
+    <section className={`${styles.section} reveal`} id="services" ref={ref}>
       <div className={styles.container}>
         <SectionHeader
           tag="Services"
@@ -29,7 +32,7 @@ export function Services() {
             <div
               key={service.id}
               className={styles.card}
-              style={{ transitionDelay: `${i * 0.06}s` }}
+              style={{ transitionDelay: `${i * 0.1}s` }}
             >
               <div className={styles.glow} />
               <div className={styles.icon}>

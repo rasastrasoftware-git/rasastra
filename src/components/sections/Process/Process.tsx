@@ -1,4 +1,7 @@
+'use client';
+
 import { SectionHeader } from '@/components/ui/SectionHeader';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 import styles from './Process.module.css';
 
 const STEPS = [
@@ -25,8 +28,10 @@ const STEPS = [
 ];
 
 export function Process() {
+  const ref = useScrollReveal<HTMLElement>();
+
   return (
-    <section className={styles.section} id="process">
+    <section className={`${styles.section} reveal`} id="process" ref={ref}>
       <div className={styles.container}>
         <SectionHeader
           tag="Process"
@@ -37,7 +42,7 @@ export function Process() {
 
         <div className={styles.grid}>
           {STEPS.map((step, i) => (
-            <div key={step.number} className={styles.card} style={{ transitionDelay: `${i * 0.06}s` }}>
+            <div key={step.number} className={styles.card} style={{ transitionDelay: `${i * 0.1}s` }}>
               <div className={styles.number}>{step.number}</div>
               <h3>{step.title}</h3>
               <p>{step.desc}</p>

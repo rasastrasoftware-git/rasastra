@@ -5,6 +5,7 @@ import { PORTFOLIO_ITEMS } from '@/constants/portfolio';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { Button } from '@/components/ui/Button';
 import { Modal } from '@/components/ui/Modal';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 import type { ModalData } from '@/types';
 import {
   FaPenFancy,
@@ -37,6 +38,7 @@ const CATEGORIES = [
 ];
 
 export function Portfolio() {
+  const ref = useScrollReveal<HTMLElement>();
   const [activeFilter, setActiveFilter] = useState('all');
   const [modalData, setModalData] = useState<ModalData | null>(null);
 
@@ -49,7 +51,7 @@ export function Portfolio() {
   const closeModal = useCallback(() => setModalData(null), []);
 
   return (
-    <section className={styles.section} id="portfolio">
+    <section className={`${styles.section} reveal`} id="portfolio" ref={ref}>
       <div className={styles.container}>
         <SectionHeader
           tag="Portfolio"
@@ -72,7 +74,7 @@ export function Portfolio() {
 
         <div className={styles.grid}>
           {filtered.map((item, i) => (
-            <div key={item.id} className={styles.card} style={{ transitionDelay: `${(i % 3) * 0.06}s` }}>
+            <div key={item.id} className={styles.card} style={{ transitionDelay: `${(i % 3) * 0.1}s` }}>
               <div className={styles.thumb} style={{ background: item.gradient }}>
                 <div className={styles.thumbIcon}>{ICON_MAP[item.icon]}</div>
                 <span className={styles.catBadge}>{item.category === 'design' ? 'Design' : item.category === 'web' ? 'Web' : 'Game'}</span>

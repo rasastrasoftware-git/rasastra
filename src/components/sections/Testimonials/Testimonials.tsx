@@ -1,10 +1,15 @@
+'use client';
+
 import { TESTIMONIALS } from '@/constants/testimonials';
 import { SectionHeader } from '@/components/ui/SectionHeader';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 import styles from './Testimonials.module.css';
 
 export function Testimonials() {
+  const ref = useScrollReveal<HTMLElement>();
+
   return (
-    <section className={styles.section} id="testimonials">
+    <section className={`${styles.section} reveal`} id="testimonials" ref={ref}>
       <div className={styles.container}>
         <SectionHeader
           tag="Testimonials"

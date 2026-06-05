@@ -1,4 +1,7 @@
+'use client';
+
 import { SectionHeader } from '@/components/ui/SectionHeader';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { FaWhatsapp, FaInstagram, FaTiktok, FaChevronRight } from 'react-icons/fa';
 import { FiMail, FiMapPin } from 'react-icons/fi';
 import styles from './Contact.module.css';
@@ -47,8 +50,10 @@ const CONTACT_ROWS = [
 ];
 
 export function Contact() {
+  const ref = useScrollReveal<HTMLElement>();
+
   return (
-    <section className={styles.section} id="contact">
+    <section className={`${styles.section} reveal`} id="contact" ref={ref}>
       <div className={styles.container}>
         <SectionHeader
           tag="Contact"

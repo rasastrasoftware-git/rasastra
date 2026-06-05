@@ -1,5 +1,8 @@
+'use client';
+
 import { TEAM_MEMBERS } from '@/constants/team';
 import { SectionHeader } from '@/components/ui/SectionHeader';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { FaInstagram, FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import styles from './Team.module.css';
 
@@ -10,8 +13,10 @@ const SOCIAL_ICONS: Record<string, React.ReactNode> = {
 };
 
 export function Team() {
+  const ref = useScrollReveal<HTMLElement>();
+
   return (
-    <section className={styles.section} id="team">
+    <section className={`${styles.section} reveal`} id="team" ref={ref}>
       <div className={styles.container}>
         <SectionHeader
           tag="Team"
@@ -22,7 +27,7 @@ export function Team() {
 
         <div className={styles.grid}>
           {TEAM_MEMBERS.map((member, i) => (
-            <div key={member.name} className={styles.card} style={{ transitionDelay: `${i * 0.06}s` }}>
+            <div key={member.name} className={styles.card} style={{ transitionDelay: `${i * 0.1}s` }}>
               <div className={`${styles.avatar} ${styles[member.avatarClass]}`}>
                 <picture>
                   <source srcSet={member.photoWebp} type="image/webp" />
