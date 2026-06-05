@@ -170,6 +170,6 @@ ul {
 
 @media (max-width: 768px) {
   :root {
-    --section-py: 80px;
+  --section-py: 140px;
   }
 }
