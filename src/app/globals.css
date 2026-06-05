@@ -32,7 +32,7 @@
   --radius-full: 9999px;
   --font: 'Poppins', sans-serif;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
-  --section-py: 80px;
+  --section-py: 140px;
   --footer-bg: #050508;
 }
 
@@ -170,6 +170,6 @@ ul {
 
 @media (max-width: 768px) {
   :root {
-  --section-py: 140px;
+    --section-py: 80px;
   }
 }
