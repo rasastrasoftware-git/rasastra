@@ -72,9 +72,9 @@ export function Portfolio() {
           ))}
         </div>
 
-        <div className={styles.grid}>
+        <div key={activeFilter} className={styles.grid}>
           {filtered.map((item, i) => (
-            <div key={item.id} className={styles.card} style={{ transitionDelay: `${(i % 3) * 0.1}s` }}>
+            <div key={item.id} className={styles.card} style={{ transitionDelay: `${i * 0.06}s` }}>
               <div className={styles.thumb} style={{ background: item.gradient }}>
                 <div className={styles.thumbIcon}>{ICON_MAP[item.icon]}</div>
                 <span className={styles.catBadge}>{item.category === 'design' ? 'Design' : item.category === 'web' ? 'Web' : 'Game'}</span>

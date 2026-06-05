@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { NAV_LINKS } from '@/constants/navigation';
 import { useActiveSection } from '@/hooks/useActiveSection';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
-import { Button } from '@/components/ui/Button';
 import { MobileMenu } from './MobileMenu';
 import styles from './Navbar.module.css';
 
@@ -50,9 +49,6 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
 
           <div className={styles.actions}>
             <ThemeToggle theme={theme} onToggle={onToggleTheme} />
-            <Button variant="primary" size="sm" href="#contact" className={styles.cta}>
-              Start a Project
-            </Button>
             <button
               className={`${styles.hamburger} ${mobileOpen ? styles.hamburgerActive : ''}`}
               onClick={handleToggleMobile}

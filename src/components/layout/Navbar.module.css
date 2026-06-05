@@ -75,11 +75,6 @@
   flex-shrink: 0;
 }
 
-.cta {
-  padding: 8px 22px;
-  font-size: 0.82rem;
-}
-
 .hamburger {
   display: none;
   flex-direction: column;
@@ -115,9 +110,6 @@
 
 @media (max-width: 768px) {
   .desktopMenu {
-    display: none;
-  }
-  .cta {
     display: none;
   }
   .hamburger {
