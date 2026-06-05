@@ -5,7 +5,6 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { FloatingWhatsApp } from '@/components/layout/FloatingWhatsApp';
 import { Hero } from '@/components/sections/Hero/Hero';
-import { Stats } from '@/components/sections/Stats/Stats';
 import { Services } from '@/components/sections/Services/Services';
 import { Portfolio } from '@/components/sections/Portfolio/Portfolio';
 import { Process } from '@/components/sections/Process/Process';
@@ -27,7 +26,6 @@ export default function Home() {
       <Navbar theme={theme} onToggleTheme={toggleTheme} />
       <main>
         <Hero />
-        <Stats />
         <Services />
         <Portfolio />
         <Process />
