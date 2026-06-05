@@ -41,6 +41,7 @@ export interface StatItem {
   target: number;
   suffix?: string;
   label: string;
+  icon: string;
 }
 
 export interface NavLink {

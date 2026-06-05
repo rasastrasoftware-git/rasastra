@@ -18,33 +18,14 @@
 
 .item {
   text-align: center;
-  padding: 40px 24px 36px;
+  padding: 36px 20px 32px;
   background: var(--glass-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--glass-border);
   border-radius: 24px;
-  position: relative;
-  overflow: hidden;
-}
-
-.item::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 24px;
-  padding: 1px;
-  background: var(--gradient-accent);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-}
-
-.item:hover::before {
-  opacity: 1;
+  box-shadow: var(--glass-shadow);
+  transition: all 0.4s var(--ease);
 }
 
 .item:hover {
@@ -54,8 +35,29 @@
   box-shadow: var(--glass-shadow-hover);
 }
 
+.iconBox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--gradient-accent);
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 16px rgba(109, 40, 217, 0.25);
+}
+
+.numberWrap {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 2px;
+}
+
 .number {
-  font-size: 3rem;
+  font-size: 2.6rem;
   font-weight: 800;
   background: var(--gradient-main);
   -webkit-background-clip: text;
@@ -66,7 +68,7 @@
 }
 
 .suffix {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   background: var(--gradient-main);
   -webkit-background-clip: text;
@@ -74,16 +76,15 @@
   background-clip: text;
   line-height: 1;
   display: inline;
-  margin-left: 2px;
 }
 
 .label {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   color: var(--text-tertiary);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 .reveal {
@@ -97,13 +98,11 @@
   transform: translateY(0);
 }
 
-
-
 @media (max-width: 1024px) {
   .grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
-  .number { font-size: 2.4rem; }
-  .suffix { font-size: 1.6rem; }
+  .number { font-size: 2.2rem; }
+  .suffix { font-size: 1.4rem; }
 }
